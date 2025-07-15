@@ -267,11 +267,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect to shortened link
     if (window.location.pathname === '/visit-link') {
         setTimeout(() => {
-            // Simulate redirect to shortened link service
-            showMessage('Redirecting to shortened link...', 'success');
+            // إعطاء 25 نقطة لزيارة الرابط
+            earnPoints(25, 'link_visit');
+            
+            // عرض رسالة التوجيه
+            showMessage('جاري التوجيه للرابط المختصر...', 'success');
+            
+            // التوجيه للرابط المختصر الحقيقي
             setTimeout(() => {
-                window.location.href = '/link-video';
-            }, 3000);
+                window.location.href = 'https://ouo.io/gD7Gcn';
+            }, 2000);
         }, 1000);
     }
 });
@@ -294,7 +299,7 @@ function confirmAdWatch() {
 }
 
 function confirmLinkVideo() {
-    earnPoints(65, 'link_video');
+    earnPoints(40, 'link_video');
 }
 
 function goToDashboard() {
